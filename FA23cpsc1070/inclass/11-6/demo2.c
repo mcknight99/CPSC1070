@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+  printf("starting C string demo!\n");
+
+  char str[] = "This is our sample string assigned at declaration!";
+  char* charPtr;
+  printf("Looking for character 's' in \"%s\"...\n",str);
+
+  charPtr = strchr(str,'s');
+  while(charPtr!=NULL) {
+    printf("found 's' at %d\n", charPtr-str+1);
+    printf("\tstr is %d\n",str);
+    printf("\tcharPtr is %x\n", charPtr);
+    charPtr=strchr(charPtr+1,'s');
+    
+  }
+
+  
+  printf("goodbye world\n");
+}

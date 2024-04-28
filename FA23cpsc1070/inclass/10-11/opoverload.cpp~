@@ -1,0 +1,25 @@
+#include "overload.h"
+
+//overloaded operators
+
+Length operator+ (Length a, Length b) {
+
+
+}
+
+Length operator- (Length a, Length b) {
+
+
+}
+
+bool operator< (Length a, Length b){
+
+
+
+}
+
+bool operator== (Length a, Length b) {
+
+
+
+}

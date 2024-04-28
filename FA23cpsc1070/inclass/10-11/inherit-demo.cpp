@@ -1,0 +1,97 @@
+#include <iostream>
+#include <string>
+
+//using namespace std;
+
+class Vehicle{
+public:
+  Vehicle() {
+    std::cout<<"Vehicle (default) constructor called!"<<std::endl;
+    id=1;
+  }
+
+  ~Vehicle() {
+    std::cout<<"Vehicle destructor called!"<<std::endl;
+    
+  }
+
+  void changeID(int inID) {
+    id=inID;
+    std::cout<<"id is now "<<id<<std::endl;
+  }
+  int getID() {
+    return id;
+  }
+  
+  
+  //private:
+
+  //protected:
+  int id;//if this were private, the child classes wouldnt be able to access this
+  
+};
+
+
+class FixedWing : public Vehicle{
+  public:
+  FixedWing() {
+    std::cout<<"FixedWing constructor is called"<<std::endl;
+    //id = 13;
+    Vehicle::changeID(13);
+  }
+  ~FixedWing() {
+    std::cout<<"FixedWing destructor called"<<std::endl;
+  }
+  void changeID(int inID) {
+    id=inID;
+  }
+private:
+  int id2;
+
+
+};
+
+class Boeing737:public FixedWing{
+public:
+  Boeing737(){
+    std::cout<<"Boeing 737 constructor is called!"<<std::endl;
+  }
+  ~Boeing737(){
+    std::cout<<"Boeing 737 destructor is called"<<std::endl;
+
+  }
+
+  void FastenSeatbelt(){
+    std::cout<<"Ding~ Skylaw is in effect!"<<std::endl;
+  }
+private:
+
+};
+
+
+int main() {
+  std::cout<<"Starting our inheritance demo!"<<std::endl<<std::endl;
+  Vehicle vehicle;
+  std::cout<<"the id of vehicle object is "<<vehicle.getID()<<std::endl;
+
+  Boeing737 max;
+  std::cout<<"the id of Boeing737 object is "<<max.getID()<<std::endl;
+  
+  Vehicle* vehicle2ptr;
+  vehicle2ptr = &vehicle;
+  std::cout<<"vehicle2 is pointing to "<<vehicle2ptr<<std::endl;
+
+  (*vehicle2ptr).changeID(66);
+  vehicle2ptr->changeID(77);
+
+  vehicle2ptr = &max;
+
+  int tempID=(*vehicle2ptr).getID();
+  std::cout<<"the id of the vehicle object pointed at is "<<tempID<<std::endl;
+
+
+
+
+  
+  std::cout<<std::endl<<"Goodbye"<<std::endl;
+}

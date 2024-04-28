@@ -1,0 +1,19 @@
+#ifndef HENRY_H
+#define HENRY_H
+#include <string>
+
+class HenryBot{
+ private:
+  string mouth;
+
+ public:
+  HenryBot();
+  HenryBot(string);
+  ~HenryBot();
+
+  void setString(string);
+  void speak();
+
+};
+
+#endif

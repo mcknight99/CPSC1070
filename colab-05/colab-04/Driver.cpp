@@ -1,0 +1,42 @@
+//Sam Pupke
+//CPSC 1071: 010
+//A++
+//5 Nov 2023
+
+#include <iostream>
+#include "Card.h"
+#include "DeckOfCards.h"
+
+using namespace std;
+
+int main() {
+  cout<<"starting main"<<endl;
+  
+  Card firstCard(1,1);
+  cout<<"first card test: "<<firstCard.toString()<<endl;
+
+  Card secondCard(2,1);
+  cout<<"second card test: "<<secondCard.toString()<<endl;
+
+  DeckOfCards deck;
+  deck.peekDeck();
+  cout<<"are there cards in the deck? " << deck.moreCards()<<endl;
+  cout<<"deal a card: " << deck.dealCard().toString()<<endl;
+  cout<<"deal a card: " << deck.dealCard().toString()<<endl;
+
+  cout<<"peek next card: ";
+  deck.peekNextCard();
+
+  cout<<"shuffling deck\n";
+  deck.shuffle();
+
+  cout<<"deal two cards: ";
+  cout<<deck.dealCard().toString()<<endl;
+  cout<<deck.dealCard().toString()<<endl;
+
+  cout<<"peek deck:";
+  deck.peekDeck();
+
+    
+  cout<<"ending main"<<endl;
+}

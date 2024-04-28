@@ -1,0 +1,32 @@
+//Sam Pupke
+//CPSC 1071: 010, E3:A++
+//5 Dec 2023
+
+#include "LinkedList.h"
+#include <stdio.h>
+#include <string.h>
+
+int main(void) {
+  
+  //initialize the list
+  struct LinkedList* list;
+  list = makeList();
+  insertNode(list, "A");
+  insertNode(list, "B");
+  printf("inserted C between A&B? %d\n", insertBetween(list, "C", "A", "B"));
+  printf("inserted F between C&B? %d\n", insertBetween(list, "F", "C", "B"));
+  
+  /*  
+  char in[1000] = "";
+  do {
+    printf("Enter a word or phrase, or -99 to end: ");
+    scanf(" %[^\n]", in);
+    if(0!=strcmp("-99",in)) {
+      insertNode(&list, in);
+    }
+  } while(0!=strcmp("-99",in));
+  */
+  printList(list);//print the formatted list
+  emptyList(list);//deallocate all the memory
+}
+

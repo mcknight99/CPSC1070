@@ -1,0 +1,105 @@
+#include <iostream>
+#include "MysteryMachine.h"
+#include "Date.h"
+#include "PizzaStore.h"
+#include "PizzaWars.h"
+
+int main() {
+
+  PizzaWars::runSimulation();
+
+
+
+  //DONT FORGET TO MAKE THE PIZZAWARS FUNCTIONS PROTECTED AGAIN AFTER TESTING
+  /*
+  Date myDate(6,14,2012);
+  Date* datePtr = &myDate;
+  PizzaStore myStore("Schilletter", 6, 1, 0.8);
+  PizzaStore myOtherStore("Core", 3, 2, 0.9);
+  PizzaStore* storePtr = &myStore;
+  PizzaStore* otherStorePtr = &myOtherStore;
+  myStore.consumeSlices(42);
+  myOtherStore.consumeSlices(22);
+  PizzaStore* nullPtr = nullptr;
+  PizzaWars::writeToFile(datePtr,nullPtr);
+  (*datePtr)++;
+  PizzaWars::writeToFile(datePtr,otherStorePtr);
+  (*datePtr)++;
+  PizzaWars::writeToFile(datePtr,storePtr);
+  */
+
+  
+  /*
+  Date testDate;
+  Date testDate2(9,4,2004);
+  std::cout<<testDate.toString()<<std::endl;
+  std::cout<<testDate2.toString()<<std::endl;
+
+  testDate.setMonth(1);
+  testDate.setDay(21);
+  testDate.setYear(1975);
+
+  std::cout<<testDate.getMonth()<<std::endl;
+  std::cout<<testDate.getDay()<<std::endl;
+  std::cout<<testDate.getYear()<<std::endl;
+
+  std::cout<<(testDate+20).toString()<<std::endl;
+  std::cout<<(testDate-30).toString()<<std::endl;
+
+  std::cout<<(++testDate).toString()<<std::endl; //separate testDate scope in the ()??
+  std::cout<<(testDate++).toString()<<std::endl;
+  std::cout<<(--testDate).toString()<<std::endl;
+  std::cout<<(testDate--).toString()<<std::endl;
+
+  std::cout<<testDate2.getDayOfWeek()<<std::endl<<std::endl;
+
+  std::cout<<testDate.toString()<<std::endl;
+  std::cout<<testDate.getDayOfWeek()<<std::endl;
+  
+  Date* datePtr = &testDate;
+
+  PizzaWars wwii;
+  
+  wwii.marchToSunday(datePtr);
+
+  std::cout<<(*datePtr).getDayOfWeek()<<std::endl;
+  std::cout<<(*datePtr).toString()<<std::endl;
+
+  datePtr = wwii.allocateWeekOfDates(*datePtr);
+
+  std::cout<<datePtr[0].getDayOfWeek()<<" "<<datePtr[1].getDayOfWeek()<<" "<<datePtr[2].getDayOfWeek()<<std::endl;
+
+
+  
+  PizzaStore shitter("shitter", 6, 1, 0.8);
+  PizzaStore core("core", 3, 2, 0.9);
+
+  std::cout<<core.getTotalSlicesLeft()<<std::endl;
+  std::cout<<shitter.getTotalSlicesLeft()<<std::endl;
+
+  shitter.tickUpdate();
+  core.tickUpdate();
+
+  shitter.showStatus();
+  core.showStatus();
+
+  shitter.consumeSlices(10);
+  core.consumeSlices(20);
+
+  shitter.showStatus();
+  core.showStatus();
+
+  shitter.tickUpdate();
+  core.tickUpdate();
+
+  shitter.showStatus();
+  core.showStatus();
+
+
+  std::cout<<shitter.getName();
+  std::cout<<std::endl<<core.getName()<<std::endl;
+
+*/
+
+
+}

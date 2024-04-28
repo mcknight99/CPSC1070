@@ -1,0 +1,37 @@
+//Sam Pupke
+//CPSC 1071: 010
+//A++
+//5 Nov 2023
+
+#include "Card.h"
+
+std::string Card::Faces[] = {"Ace","Deuce","Three","Four","Five","Six","Seven","Eight","Nine","Ten","Jack","Queen","King"};
+
+std::string Card::Suits[] = {"Hearts", "Diamonds", "Clubs", "Spades"};
+
+std::string Card::FancyFaces[] = {"A","2","3","4","5","6","7","8","9","10","J","Q","K"};
+
+std::string Card::FancySuits[] = {"♥", "♦", "♣", "♠"};
+
+//default constructor for a card will default to an ace of hearts
+Card::Card() {
+  face=ACE;
+  suit=HEARTS;
+}
+
+//2 parameter constructor for a card to set the face and suit of a card
+Card::Card(int faceIn, int suitIn) {
+  face=faceIn;
+  suit=suitIn;
+}
+
+//returns a string of the card in long hand, using the Faces[] and Suits[] string arrays
+std::string Card::toString() {
+  return Faces[face-1] + " of " + Suits[suit-1];
+}
+
+//returns a string of the card in short hand, using the FancyFaces[] and FancySuits[] string arrays
+std::string Card::fancyString() {
+  //return FancySuits[suit-1]+FancyFaces[face-1];
+  return FancyFaces[face-1]+FancySuits[suit-1];//cant decide which looks better
+}

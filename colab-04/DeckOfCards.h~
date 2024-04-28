@@ -1,0 +1,27 @@
+//Sam Pupke
+//CPSC 1071: 010
+//A++
+//5 Nov 2023
+
+#ifndef DECKOFCARDS_H
+#define DECKOFCARDS_H
+#include "Card.h"
+#include <vector>
+#include <iostream>
+#include <cmath>
+#include <ctime>
+
+class DeckOfCards{
+ public:
+  DeckOfCards();
+  bool moreCards();
+  Card dealCard();
+  void peekNextCard();
+  void peekDeck();
+  //void shuffle();
+  void shuffle(int count = 100);
+ private:
+  std::vector<Card> deck;
+};
+
+#endif

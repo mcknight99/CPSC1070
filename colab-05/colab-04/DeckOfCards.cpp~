@@ -1,0 +1,67 @@
+//Sam Pupke
+//CPSC 1071: 010
+//A++
+//5 Nov 2023
+
+#include "DeckOfCards.h"
+
+//default constructor for a deck of cards
+//stores the cards to the vector "deck"
+//in the order of Hearts, Diamonds, Clubs, Spades
+//as well as Ace, 2->10, J, Q, K
+DeckOfCards::DeckOfCards() {
+  for(int i = Card::HEARTS; i<=Card::SPADES; i++) {
+    for(int j = Card::ACE; j<=Card::KING; j++) {
+      deck.push_back(Card(j,i));
+    }
+  }
+
+}
+
+//returns a boolean of true if there are more cards in the deck
+//returns false if there are no more cards in the deck
+bool DeckOfCards::moreCards() {
+  return !deck.empty();
+}
+
+//returns the Card at the top of the deck vector
+//removes the Card from the deck vector
+Card DeckOfCards::dealCard() {
+  if(moreCards()) {
+    Card scratchCard = deck[0];
+    deck.erase(deck.begin());
+    return scratchCard;
+  }
+}
+
+//prints next card to console in shorthand
+void DeckOfCards::peekNextCard() {
+  std::cout<<deck[0].fancyString()<<std::endl;
+}
+
+//prints remaining deck to console in one line in shorthand
+void DeckOfCards::peekDeck() {
+  for(int i = 0; i<static_cast<int>(deck.size()); i++) {
+    std::cout<<deck[i].fancyString()<<", ";
+  }
+  std::cout<<std::endl;
+}
+
+//swaps a pair of randomly selected cards an int@count amount of times
+//default count is 100 swaps (defined in DeckOfCards.h)
+void DeckOfCards::shuffle(int count) {
+  if(deck.size()>1) { //can't switch two cards if there's one or zero cards
+    srand(time(0));
+    for(int i = 0; i<count; i++) {
+      int pos1=0;
+      int pos2=0;
+      do{
+	pos1=(rand()%deck.size());
+	pos2=(rand()%deck.size());
+      } while(pos1==pos2); //make sure that pos1 and pos2 aren't the same to ensure there is a swap instead of a no-move
+      Card scratchCard = deck[pos2];
+      deck[pos2] = deck[pos1];
+      deck[pos1] = scratchCard;
+    }
+  }
+}

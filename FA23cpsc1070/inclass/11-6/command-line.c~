@@ -1,0 +1,11 @@
+#include <stdio.h>
+
+int main(int argc, char * argv[]) {
+  printf("starting a command line demo!\n");
+
+  if(argc==2) {
+    printf("the argument supplied to program %s is %s\n", argv[0], argv[1]);
+  }
+
+  printf("goodbye world!\n");
+}

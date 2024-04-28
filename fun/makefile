@@ -1,0 +1,2 @@
+new:
+	touch makefile2
